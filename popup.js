@@ -25,7 +25,7 @@ var sheetNum = 0;
 var numberOrderDesc = false;
 var nameOrderDesc = false;
 var loadedData = {};
-var getInfoButton = $("#getInfoButton");
+
 
 var spreadsheetUrl = "https://docs.google.com/spreadsheets/d/1Ye1Lx8pdshdpfU7d9l3Y131IYGJ1ERONg1t-fPng7z4/pubhtml";
 
@@ -58,7 +58,9 @@ $("body").append(` <i id="spinner" class="fa fa-spinner fa-spin" style="font-siz
     <button id="getInfoButton" type="button" class="btn">FIX URLS & GET INFO</button>
     <div id="result"></div>
 
-    </div>`)
+    </div>`);
+
+var getInfoButton = $("#getInfoButton");
 
 $.get(spreadsheetUrl, function (data) {
     $(data).find("li[id^='sheet-button']").each(function (index) {
