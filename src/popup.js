@@ -1,4 +1,4 @@
-// v.6.05
+// v.6.06
 
 var ids = [];
 var urls = [];
@@ -371,167 +371,168 @@ getInfoButton.click(function () {
         });
     });
 
-     console.log(JSON.stringify(elements));
+    alert(elements[394].url);
+    alert(elements[1115].url);
 
-   // results = mainFunction(elements);
+   results = mainFunction(elements);
 
    
 
-    // var refreshIntervalId = setInterval(function () {
-    //     results.sort(compare);
-    //     statusCodes1.sort(compareNumber);
-    //     brokenLinksCount = 0;
-    //     $("#copyToClipboardButton").text(results.length + "/" + linksCount);
-    //     var rows = "";
-    //     var style = "";
-    //     var style2 = "";
+    var refreshIntervalId = setInterval(function () {
+        results.sort(compare);
+        statusCodes1.sort(compareNumber);
+        brokenLinksCount = 0;
+        $("#copyToClipboardButton").text(results.length + "/" + linksCount);
+        var rows = "";
+        var style = "";
+        var style2 = "";
 
-    //     results.forEach(function (element) {
-    //         if (element.hasIdError) {
-    //             style2 = "background-color:#FF0000;"
-    //         } else {
-    //             style2 = ""
-    //         }
+        results.forEach(function (element) {
+            if (element.hasIdError) {
+                style2 = "background-color:#FF0000;"
+            } else {
+                style2 = ""
+            }
 
-    //         if (element.status === "success") {
-    //             if (element.verificationStatus === "unverifiable" || element.verificationStatus === "not verified" || element.verificationStatus === "queued") {
-    //                 if (!element.wasChanged) {
-    //                     style = "background-color:#F0AD4E;";
-    //                 } else {
-    //                     style = "background-color:#F7D6A6;";
-    //                 }
-    //             } else {
-    //                 if (element.verificationStatus === "error") {
-    //                     if (!element.wasChanged) {
-    //                         style = "background-color:#FF0000;";
-    //                     } else {
-    //                         style = "background-color:#FF0000;";
-    //                     }
-    //                 } else {
-    //                     if (!element.wasChanged) {
-    //                         style = "background-color:#5CB85C;";
-    //                     } else {
-    //                         style = "background-color:#ADDBAD;";
-    //                     }
-    //                 }
-    //             }
-    //         } else {
-    //             style = "background-color:#FF0000;";
-    //             element.verificationStatus = "error";
-    //         }
+            if (element.status === "success") {
+                if (element.verificationStatus === "unverifiable" || element.verificationStatus === "not verified" || element.verificationStatus === "queued") {
+                    if (!element.wasChanged) {
+                        style = "background-color:#F0AD4E;";
+                    } else {
+                        style = "background-color:#F7D6A6;";
+                    }
+                } else {
+                    if (element.verificationStatus === "error") {
+                        if (!element.wasChanged) {
+                            style = "background-color:#FF0000;";
+                        } else {
+                            style = "background-color:#FF0000;";
+                        }
+                    } else {
+                        if (!element.wasChanged) {
+                            style = "background-color:#5CB85C;";
+                        } else {
+                            style = "background-color:#ADDBAD;";
+                        }
+                    }
+                }
+            } else {
+                style = "background-color:#FF0000;";
+                element.verificationStatus = "error";
+            }
 
-    //         if (element.needToCheck) {
-    //             style = "background-color:#5BC0DE;";
-    //         }
+            if (element.needToCheck) {
+                style = "background-color:#5BC0DE;";
+            }
 
-    //         if (element.verificationStatus == "error") {
-    //             brokenLinksCount++;
-    //         }
-    //         var sc1 = statusCodes1[element.number - 1];
+            if (element.verificationStatus == "error") {
+                brokenLinksCount++;
+            }
+            var sc1 = statusCodes1[element.number - 1];
 
-    //         // element.statusCode1 = sc1.statusCode;
+            // element.statusCode1 = sc1.statusCode;
 
-    //         // rows += `
-    //         //     <tr style=`+ style + `>
-    //         //         <td  style=`+ style2 + ` class="col-sm-1">` + element.id + `</td>
-    //         //         <td class="col-sm-1">`+ element.link + `</td>
-    //         //         <td class="col-sm-1">`+ element.user + `</td>
-    //         //         <td class="col-sm-2">`+ element.ts + `</td>
-    //         //         <td class="col-sm-1">`+ element.qc + `</td>
-    //         //         <td class="col-sm-1">`+ element.ec + `</td>
-    //         //         <td class="col-sm-1">`+ element.bname + `</td>
-    //         //         <td class="col-sm-1">` + element.url + `</td>
-    //         //         <td class="col-sm-1">`+ element.verificationStatus + `</td>
-    //         //         <td class="col-sm-1">`+ element.verificationDate + `</td>
-    //         //         <td class="col-sm-2">`+ element.validatedBy + `</td>
-    //         //     </tr>
-    //         //     `;
+            // rows += `
+            //     <tr style=`+ style + `>
+            //         <td  style=`+ style2 + ` class="col-sm-1">` + element.id + `</td>
+            //         <td class="col-sm-1">`+ element.link + `</td>
+            //         <td class="col-sm-1">`+ element.user + `</td>
+            //         <td class="col-sm-2">`+ element.ts + `</td>
+            //         <td class="col-sm-1">`+ element.qc + `</td>
+            //         <td class="col-sm-1">`+ element.ec + `</td>
+            //         <td class="col-sm-1">`+ element.bname + `</td>
+            //         <td class="col-sm-1">` + element.url + `</td>
+            //         <td class="col-sm-1">`+ element.verificationStatus + `</td>
+            //         <td class="col-sm-1">`+ element.verificationDate + `</td>
+            //         <td class="col-sm-2">`+ element.validatedBy + `</td>
+            //     </tr>
+            //     `;
 
-    //         rows += `
-    //             <tr style=`+ style + `>
-    //                 <td  style=`+ style2 + ` class="col-sm-1">` + element.number + `</td>
-    //                 <td class="col-sm-1">` + element.statusCode1 + `</td>
-    //                 <td class="col-sm-1">` + element.statusCode2 + `</td>
-    //                 <td class="col-sm-1">` + element.url + `</td>
-    //                 <td class="col-sm-1">`+ element.verificationStatus + `</td>
-    //                 <td class="col-sm-1">`+ element.verificationDate + `</td>
-    //                 <td class="col-sm-2">`+ element.validatedBy + `</td>
-    //             </tr>
-    //             `;
-    //     });
-    //     var percentage = results.length / (linksCount / 100);
+            rows += `
+                <tr style=`+ style + `>
+                    <td  style=`+ style2 + ` class="col-sm-1">` + element.number + `</td>
+                    <td class="col-sm-1">` + element.statusCode1 + `</td>
+                    <td class="col-sm-1">` + element.statusCode2 + `</td>
+                    <td class="col-sm-1">` + element.url + `</td>
+                    <td class="col-sm-1">`+ element.verificationStatus + `</td>
+                    <td class="col-sm-1">`+ element.verificationDate + `</td>
+                    <td class="col-sm-2">`+ element.validatedBy + `</td>
+                </tr>
+                `;
+        });
+        var percentage = results.length / (linksCount / 100);
 
-    //     if (percentage > 0) {
-    //         $("#result").show();
-    //         $("#spinner").hide();
-    //     }
-
-
+        if (percentage > 0) {
+            $("#result").show();
+            $("#spinner").hide();
+        }
 
 
-    //     // var html = `
-    //     //         <div id="progress" class="progress">
-    //     //           <div id="progress-in" class="progress-bar progress-bar-info progress-bar-striped" role="progressbar"
-    //     //           aria-valuenow="`+ percentage + `" aria-valuemin="0" aria-valuemax="100" style="width:` + percentage + `%">
-    //     //             `+ results.length + `/` + linksCount + ` - ` + Math.round(percentage - 1) + `% 
-    //     //           </div>
-    //     //         </div>
-    //     //         <table id="table" class="table table-bordered table-fixed">
-    //     //                 <thead>
-    //     //                     <th class="col-sm-1 text-center">UUID</th>
-    //     //                     <th class="col-sm-1 text-center">LINK</th>
-    //     //                     <th class="col-sm-1 text-center">USER</th>
-    //     //                     <th class="col-sm-2 text-center">VERIFICATION TIMESTAMP</th>
-    //     //                     <th class="col-sm-1 text-center">QC</th>
-    //     //                     <th class="col-sm-1 text-center">ERROR CODES</th>
-    //     //                     <th class="col-sm-1 text-center">BUSINESS NAME</th>
-    //     //                     <th class="col-sm-1 text-center">FIX URL</th>
-    //     //                     <th class="col-sm-1 text-center">VERIFICATION STATUS</th>
-    //     //                     <th class="col-sm-1 text-center">VERIFICATION DATE</th>
-    //     //                     <th class="col-sm-2 text-center">VERIFIED BY</th>
-    //     //                 </thead>
-    //     //                 <tbody id="table-body" style="margin-top:50px; color:white;">
-    //     //                 `+ rows + `
-    //     //                 </tbody>
-    //     //         </table>`
 
-    //     var html = `
-    //             <div id="progress" class="progress">
-    //               <div id="progress-in" class="progress-bar progress-bar-info progress-bar-striped" role="progressbar"
-    //               aria-valuenow="`+ percentage + `" aria-valuemin="0" aria-valuemax="100" style="width:` + percentage + `%">
-    //                 `+ results.length + `/` + linksCount + ` - ` + Math.round(percentage - 1) + `% 
-    //               </div>
-    //             </div>
-    //             <table id="table" class="table table-bordered table-fixed">
-    //                     <thead>
-    //                         <th class="col-sm-1 text-center">NUMBER</th>
-    //                         <th class="col-sm-1 text-center">STATUS CODE 1</th>
-    //                         <th class="col-sm-1 text-center">STATUS CODE 2</th>
-    //                         <th class="col-sm-1 text-center">FIX URL</th>
-    //                         <th class="col-sm-1 text-center">VERIFICATION STATUS</th>
-    //                         <th class="col-sm-1 text-center">VERIFICATION DATE</th>
-    //                         <th class="col-sm-2 text-center">VERIFIED BY</th>
-    //                     </thead>
-    //                     <tbody id="table-body" style="margin-top:50px; color:white;">
-    //                     `+ rows + `
-    //                     </tbody>
-    //             </table>`
 
-    //     $("#result").html(html);
+        // var html = `
+        //         <div id="progress" class="progress">
+        //           <div id="progress-in" class="progress-bar progress-bar-info progress-bar-striped" role="progressbar"
+        //           aria-valuenow="`+ percentage + `" aria-valuemin="0" aria-valuemax="100" style="width:` + percentage + `%">
+        //             `+ results.length + `/` + linksCount + ` - ` + Math.round(percentage - 1) + `% 
+        //           </div>
+        //         </div>
+        //         <table id="table" class="table table-bordered table-fixed">
+        //                 <thead>
+        //                     <th class="col-sm-1 text-center">UUID</th>
+        //                     <th class="col-sm-1 text-center">LINK</th>
+        //                     <th class="col-sm-1 text-center">USER</th>
+        //                     <th class="col-sm-2 text-center">VERIFICATION TIMESTAMP</th>
+        //                     <th class="col-sm-1 text-center">QC</th>
+        //                     <th class="col-sm-1 text-center">ERROR CODES</th>
+        //                     <th class="col-sm-1 text-center">BUSINESS NAME</th>
+        //                     <th class="col-sm-1 text-center">FIX URL</th>
+        //                     <th class="col-sm-1 text-center">VERIFICATION STATUS</th>
+        //                     <th class="col-sm-1 text-center">VERIFICATION DATE</th>
+        //                     <th class="col-sm-2 text-center">VERIFIED BY</th>
+        //                 </thead>
+        //                 <tbody id="table-body" style="margin-top:50px; color:white;">
+        //                 `+ rows + `
+        //                 </tbody>
+        //         </table>`
 
-    //     if (results.length === linksCount) {
-    //         selectElementContents(document.getElementById('table'));
-    //         $("#result").html(html);
-    //         $("#progress-in").text("COMPLETE. THE TABLE IS COPIED TO THE CLIPBOARD. " + brokenLinksCount + " PROBLEM LINKS");
-    //         $("#progress").addClass("done");
-    //         console.log(JSON.stringify(results));
-    //         clearInterval(refreshIntervalId);
-    //     }
+        var html = `
+                <div id="progress" class="progress">
+                  <div id="progress-in" class="progress-bar progress-bar-info progress-bar-striped" role="progressbar"
+                  aria-valuenow="`+ percentage + `" aria-valuemin="0" aria-valuemax="100" style="width:` + percentage + `%">
+                    `+ results.length + `/` + linksCount + ` - ` + Math.round(percentage - 1) + `% 
+                  </div>
+                </div>
+                <table id="table" class="table table-bordered table-fixed">
+                        <thead>
+                            <th class="col-sm-1 text-center">NUMBER</th>
+                            <th class="col-sm-1 text-center">STATUS CODE 1</th>
+                            <th class="col-sm-1 text-center">STATUS CODE 2</th>
+                            <th class="col-sm-1 text-center">FIX URL</th>
+                            <th class="col-sm-1 text-center">VERIFICATION STATUS</th>
+                            <th class="col-sm-1 text-center">VERIFICATION DATE</th>
+                            <th class="col-sm-2 text-center">VERIFIED BY</th>
+                        </thead>
+                        <tbody id="table-body" style="margin-top:50px; color:white;">
+                        `+ rows + `
+                        </tbody>
+                </table>`
 
-    //     if (results.length !== linksCount) {
-    //         $("#progress").val(results.length);
-    //     }
-    // }, 200)
+        $("#result").html(html);
+
+        if (results.length === linksCount) {
+            selectElementContents(document.getElementById('table'));
+            $("#result").html(html);
+            $("#progress-in").text("COMPLETE. THE TABLE IS COPIED TO THE CLIPBOARD. " + brokenLinksCount + " PROBLEM LINKS");
+            $("#progress").addClass("done");
+            console.log(JSON.stringify(results));
+            clearInterval(refreshIntervalId);
+        }
+
+        if (results.length !== linksCount) {
+            $("#progress").val(results.length);
+        }
+    }, 200)
 
     getInfoButton.css("display", "none");
     $("#menutable").hide();
