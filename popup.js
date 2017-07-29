@@ -29,6 +29,37 @@ var getInfoButton = $("#getInfoButton");
 
 var spreadsheetUrl = "https://docs.google.com/spreadsheets/d/1Ye1Lx8pdshdpfU7d9l3Y131IYGJ1ERONg1t-fPng7z4/pubhtml";
 
+$(body).append(` <i id="spinner" class="fa fa-spinner fa-spin" style="font-size:40px"></i>
+    <!-- <div class="col-sm-offset-4 col-sm-4">
+        <button class="col-sm-2" id="spreadsheetLeft"><i class="fa fa-caret-left" aria-hidden="true"></i></button>
+        <span class="col-sm-8" id="spreadsheetName">Main</span>
+        <button class="col-sm-2" id="spreadsheetRight"><i class="fa fa-caret-right" aria-hidden="true"></i></button>
+    </div> -->
+    <div>
+        <table id="sheetTable" class="table table-striped">
+            <thead id="sheet-rows-head">
+                <tr>
+                    <th class="col-sm-1 text-center">#</th>
+                    <th class="col-sm-8 text-center">SHEET NAME</th>
+                    <th class="col-sm-3 text-center">ADD TO PROCESS</th>
+                </tr>
+                <tr>
+                    <th class="col-sm-1 text-center"><button id="numberDesc" class="lbtn"><i class="fa fa-caret-down" aria-hidden="true"></i></button></th>
+                    <th class="col-sm-8 text-center"><button id="nameDesc" class="lbtn"><i class="fa fa-caret-down" aria-hidden="true"></i></button></th>
+                    <th id="e" class="col-sm-3 text-center">
+                        <input id="processAll" type="checkbox" value=""></input>
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="sheet-rows">
+            </tbody>
+        </table>
+    </div>
+    <button id="getInfoButton" type="button" class="btn">FIX URLS & GET INFO</button>
+    <div id="result"></div>
+
+    </div>`)
+
 $.get(spreadsheetUrl, function (data) {
     $(data).find("li[id^='sheet-button']").each(function (index) {
         var id = $(this).prop("id");
