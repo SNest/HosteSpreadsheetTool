@@ -1,4 +1,4 @@
-// v.5
+// v.6
 
 var ids = [];
 var urls = [];
@@ -373,6 +373,8 @@ getInfoButton.click(function () {
 
     results = mainFunction(elements);
 
+    console.log(JSON.stringify(elements));
+
     var refreshIntervalId = setInterval(function () {
         results.sort(compare);
         statusCodes1.sort(compareNumber);
@@ -415,7 +417,6 @@ getInfoButton.click(function () {
                 style = "background-color:#FF0000;";
                 element.verificationStatus = "error";
             }
-
 
             if (element.needToCheck) {
                 style = "background-color:#5BC0DE;";
