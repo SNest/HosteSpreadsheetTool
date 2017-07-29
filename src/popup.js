@@ -385,14 +385,14 @@ getInfoButton.click(function () {
             }
 
             if (element.status === "success") {
-                if (element.verificationStatus === "not verified" || element.verificationStatus === "queued") {
+                if (element.verificationStatus === "unverifiable" || element.verificationStatus === "not verified" || element.verificationStatus === "queued") {
                     if (!element.wasChanged) {
                         style = "background-color:#F0AD4E;";
                     } else {
                         style = "background-color:#F7D6A6;";
                     }
                 } else {
-                    if (element.verificationStatus === "unverifiable" || element.verificationStatus === "error") {
+                    if (element.verificationStatus === "error") {
                         if (!element.wasChanged) {
                             style = "background-color:#FF0000;";
                         } else {
