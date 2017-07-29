@@ -199,6 +199,9 @@ function mainFunction(elements) {
                     response = data;
                     element.hasIdError = hasIdError;
                     url = businessUrlBase + element.id;
+                    if(url === "admin.austin.ownlocal.com/businesses/"){
+                        url = "admin.austin.ownlocal.com/businesses/0";
+                    }
                 },
                 complete: function (xhr, textStatus) {
                     var theStatus = xhr.status;
@@ -450,8 +453,6 @@ getInfoButton.click(function () {
                     <td class="col-sm-2">`+ element.validatedBy + `</td>
                 </tr>
                 `;
-
-
         });
         var percentage = results.length / (linksCount / 100);
 
