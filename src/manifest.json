@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "Hoste Spreadsheet Tool",
     "description": "© Tim Nichol Hoste Solutions",
-    "version": "1.1",
+    "version": "3.0",
     "permissions": [
         "<all_urls>",
         "webRequest",
@@ -12,9 +12,7 @@
     "incognito": "spanning",
     "background": {
         "scripts": [
-            "thirdParty/mousetrap.min.js",
             "thirdParty/jquery-3.2.1.min.js",
-            "thirdParty/sheetrock.min.js",
             "scriptInjector.js"
         ]
     },
@@ -24,9 +22,7 @@
                 "*://*/*"
             ],
             "js": [
-                "thirdParty/jquery-3.2.1.min.js",
-                "thirdParty/mousetrap.min.js",
-                "thirdParty/sheetrock.min.js"
+                "thirdParty/jquery-3.2.1.min.js"
             ]
         }
     ],
