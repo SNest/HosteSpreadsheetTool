@@ -257,7 +257,7 @@ getInfoButton.click(function () {
     $("#sheetTable").hide();
     $("#result").hide();
     $("#spinner").show();
-
+    alert("Eureka");
     elements = [];
     linksCount = 0;
     brokenLinksCount = 0;
