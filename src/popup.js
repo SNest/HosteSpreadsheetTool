@@ -371,9 +371,11 @@ getInfoButton.click(function () {
         });
     });
 
-    results = mainFunction(elements);
+     console.log(JSON.stringify(elements));
 
-    console.log(JSON.stringify(elements));
+   // results = mainFunction(elements);
+
+   
 
     // var refreshIntervalId = setInterval(function () {
     //     results.sort(compare);
