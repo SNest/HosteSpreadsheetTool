@@ -1,3 +1,5 @@
+// v.5
+
 var ids = [];
 var urls = [];
 var publishers = [];
@@ -199,8 +201,8 @@ function mainFunction(elements) {
                     response = data;
                     element.hasIdError = hasIdError;
                     url = businessUrlBase + element.id;
-                    if(url === "admin.austin.ownlocal.com/businesses/"){
-                        url = "admin.austin.ownlocal.com/businesses/0";
+                    if(url === businessUrlBase){
+                        url = businessUrlBase  + 0;
                     }
                 },
                 complete: function (xhr, textStatus) {
