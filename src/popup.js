@@ -1,4 +1,4 @@
-// v.6.08
+// v.6.10
 
 var ids = [];
 var urls = [];
@@ -370,9 +370,6 @@ getInfoButton.click(function () {
             linksCount++;
         });
     });
-
-    alert(elements[393].url);
-    alert(elements[1114].url);
 
    results = mainFunction(elements);
 
