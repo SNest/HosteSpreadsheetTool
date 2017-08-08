@@ -5,15 +5,19 @@
     "version": "3.0",
     "permissions": [
         "<all_urls>",
-        "webRequest",
-        "webRequestBlocking",
+        // "webRequest",
+        // "webRequestBlocking",
+        "tabs",
         "activeTab"
     ],
     "incognito": "spanning",
     "background": {
         "scripts": [
             "thirdParty/jquery-3.2.1.min.js",
-            "scriptInjector.js"
+            "thirdParty/moment.js",
+            "thirdParty/lodash.js",
+            "scriptInjector.js",
+            "popup.js"
         ]
     },
     "content_scripts": [
@@ -22,7 +26,9 @@
                 "*://*/*"
             ],
             "js": [
-                "thirdParty/jquery-3.2.1.min.js"
+                "thirdParty/jquery-3.2.1.min.js",
+                "thirdParty/moment.js",
+                "thirdParty/lodash.js"
             ]
         }
     ],
